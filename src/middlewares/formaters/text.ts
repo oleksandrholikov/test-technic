@@ -6,10 +6,11 @@ export default function formatText (
     next: NextFunction
 ){
     if(typeof req.body === "string"){
-        req.body = req.body
-        .replace(/\s+/g, " ")
-        .replace(/\n{2,}/g, "\n")
-        .trim();
+        req.body = req.body        
+        .replace(/[ \t\v]+/g, " ")      
+        .replace(/\n{3,}/g, "\n")      
+        .replace(/[ \t]+$/gm, "")
+        .trim();       
     }
     next();
 }
