@@ -1,4 +1,13 @@
-export function justifyText (text: string, lineLength = 80): string{
+export function justifyText(text: string):string{  
+    const paragraphs = text.split(/\n{2,}/);
+    const justified = paragraphs.map(p =>
+        justifyParagraph(p.trim(), 80)
+    );
+
+    return justified.join("\n");
+}
+
+function justifyParagraph (text: string, lineLength = 80): string{
     const words = text.split(/\s+/).filter(Boolean);
     const lines: string[] = [];
     let currentLine:string[] = [];
