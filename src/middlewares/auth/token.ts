@@ -1,7 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { tokens } from "../../routes/token.js";
 
-export function authToken(
+export default function authToken(
     req: Request,
     res: Response,
     next: NextFunction
