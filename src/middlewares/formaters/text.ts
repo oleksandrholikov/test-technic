@@ -7,7 +7,7 @@ export default function formatText (
 ){
     if(typeof req.body === "string"){
         req.body = req.body
-        .replace(/[ \t\v]+/g, "")
+        .replace(/\s+/g, " ")
         .replace(/\n{2,}/g, "\n")
         .trim();
     }
