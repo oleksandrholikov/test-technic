@@ -3,7 +3,7 @@ import justifyRouter from "./routes/justify.js"
 import tokenRouter from "./routes/token.js"
 
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
 app.use(express.text({type: 'text/plain'}));
